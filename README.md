@@ -1,2 +1,1 @@
 ﻿# Contextual Emotion Recognition
-`n`nResearch project for explainable contextual emotion recognition with text-guided reasoning. See [workflow.md](workflow.md) for the recommended phases and experiment plan.`n`n## Repository layout`n`n- `data/`: dataset locations; raw EMOTIC data is kept out of Git.`n- `src/`: dataset, model, reasoning, retrieval, and evaluation code.`n- `configs/`: experiment settings.`n- `notebooks/`: exploration and debugging.`n- `experiments/`: experiment records.`n- `outputs/`: generated artifacts.`n- `paper/`: manuscript draft and research references.
