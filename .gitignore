@@ -1,4 +1,4 @@
-# Datasets and generated artifacts
+﻿# Datasets and generated artifacts
 data/
 outputs/
 models/
@@ -27,3 +27,7 @@ paper/
 # Operating-system metadata
 .DS_Store
 Thumbs.db
+
+#
+.ini
+

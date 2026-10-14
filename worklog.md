@@ -29,11 +29,28 @@
 
 ### Data inspection notebook
 
-- Updated `01_Inspect.ipynb` to load the original EMOTIC data directly with `scipy.io.loadmat`, removing its dependency on importing `EmoticDataset`.
-- Added support for both PAMI and CVPR annotations in the notebook.
-- Added image-count and person-annotation statistics for every split.
-- Added checks that map annotation records to their corresponding image files.
-- Added sample visualization with bounding boxes, categorical annotations, and VAD values.
+#### Purpose of `01_Inspect.ipynb`
+
+- Created `01_Inspect.ipynb` as the data-validation stage that must be completed before model development or training.
+- Used the notebook to verify the real structure of the original EMOTIC annotations instead of assuming a preprocessed schema.
+- Verified that the PAMI and CVPR annotation files expose the expected `train`, `val`, and `test` splits.
+- Counted image records and person annotations in each split to confirm that one image may contain multiple annotated target people.
+- Checked whether every annotation record can be resolved to an existing image from the available EMOTIC image sources.
+- Inspected target-person bounding boxes, categorical emotion annotations, and continuous VAD annotations.
+- Visualized a source image with every target-person bounding box drawn on it so annotation coordinates can be checked against the actual image.
+- Kept this notebook focused on inspection and validation; it does not train a model or generate processed training data.
+
+#### Data and tools used
+
+- Loaded the PAMI `Annotations.mat` file and the CVPR `CVPR17_Annotations.mat` file.
+- Resolved images across the `framesdb`, `mscoco`, `ade20k`, and `emodb_small` sources.
+- Used `scipy.io.loadmat(..., simplify_cells=True)` to convert MATLAB annotation structures into Python dictionaries, lists, and NumPy values.
+- Used `numpy` to normalize MATLAB arrays and parse bounding-box coordinates.
+- Used `pathlib.Path` to construct relative image paths and search the configured image roots.
+- Used `PIL.Image` to open source images in RGB format.
+- Used `matplotlib` and `matplotlib.patches.Rectangle` to display images and draw target-person bounding boxes.
+- Added helper functions for normalizing MATLAB values, loading available splits, counting people, constructing relative image paths, and resolving image files.
+- Removed the dependency on importing `EmoticDataset`, allowing the notebook to inspect the raw EMOTIC files directly.
 - Removed the previous import-error output and syntax-checked every code cell.
 
 ### Experimental workflow
