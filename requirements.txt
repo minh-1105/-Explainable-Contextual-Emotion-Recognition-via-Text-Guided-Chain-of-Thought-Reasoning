@@ -1,0 +1,15 @@
+# Dataset loading and image processing
+numpy>=1.24,<3
+scipy>=1.10,<2
+Pillow>=10,<13
+
+# Visual baseline
+torch>=2.1,<3
+torchvision>=0.16,<1
+
+# Inspection, configuration, and evaluation
+matplotlib>=3.7,<4
+jupyterlab>=4,<5
+PyYAML>=6,<7
+scikit-learn>=1.3,<2
+tqdm>=4.66,<5

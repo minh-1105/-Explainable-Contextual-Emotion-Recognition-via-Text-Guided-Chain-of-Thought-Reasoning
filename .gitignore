@@ -3,3 +3,7 @@ data
 
 #report
 paper
+
+#enivroment
+.venv/
+venv
