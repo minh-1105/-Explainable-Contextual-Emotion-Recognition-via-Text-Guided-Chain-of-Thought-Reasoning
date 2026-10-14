@@ -1,5 +1,7 @@
 ﻿# Data and generated outputs`ndata/raw/`ndata/processed/`noutputs/checkpoints/`noutputs/logs/`noutputs/predictions/`n*.pt`n*.pth`n*.t7`n*.zip`n*.tar`n*.tar.bz2`n`n# Python`n__pycache__/`n*.py[cod]`n.venv/`nvenv/
-data
+data/*
+!data/raw/
+!data/raw/**
 
 #report
 paper
